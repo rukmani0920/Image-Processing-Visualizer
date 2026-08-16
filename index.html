@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Kernel Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Image Kernel Visualizer</h1>
+
+    <p class="subtitle">
+        Spatial Domain Methods & Gradient Operators
+    </p>
+
+
+    <!-- Upload -->
+
+    <section class="card">
+
+        <h2>1. Upload Image</h2>
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
+
+    </section>
+
+
+    <!-- Method -->
+
+    <section class="card">
+
+        <h2>2. Select Method</h2>
+
+        <select id="kernelSelect">
+
+            <option value="blur">Blur</option>
+            <option value="sharpen">Sharpen</option>
+            <option value="sobelX">Sobel X</option>
+            <option value="sobelY">Sobel Y</option>
+            <option value="prewittX">Prewitt X</option>
+            <option value="prewittY">Prewitt Y</option>
+
+        </select>
+
+    </section>
+
+
+    <!-- Images -->
+
+    <section class="image-section">
+
+        <div class="image-card">
+
+            <h2>Original Image</h2>
+
+            <div class="canvas-wrapper">
+
+                <canvas id="originalCanvas"></canvas>
+
+                <canvas id="gridCanvas"></canvas>
+
+            </div>
+
+            <p>
+                Click on the image to select a 3×3 pixel region.
+            </p>
+
+        </div>
+
+
+        <div class="image-card">
+
+            <h2>Output Image</h2>
+
+            <canvas id="outputCanvas"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- Kernel -->
+
+    <section class="card">
+
+        <h2>3. Selected Kernel</h2>
+
+        <div id="kernelDisplay"></div>
+
+    </section>
+
+
+    <!-- Pixel calculation -->
+
+    <section class="card">
+
+        <h2>4. Pixel Calculation</h2>
+
+        <div id="pixelRegion">
+            Click on the original image.
+        </div>
+
+        <div id="calculation"></div>
+
+        <div id="result"></div>
+
+    </section>
+
+
+    <!-- Full image pixels -->
+
+    <section class="card">
+
+        <h2>5. Full Image Pixel Values</h2>
+
+        <p>
+            Grayscale pixel values of the uploaded image:
+        </p>
+
+        <div id="fullPixelValues">
+            Upload an image to view pixel values.
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
